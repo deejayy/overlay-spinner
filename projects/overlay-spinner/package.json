@@ -1,6 +1,6 @@
 {
   "name": "@deejayy/overlay-spinner",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "description": "Overlay Spinner Component for Angular",
   "private": false,
   "repository": {
@@ -19,8 +19,8 @@
   ],
   "homepage": "https://github.com/deejayy/overlay-spinner",
   "peerDependencies": {
-    "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0"
+    "@angular/common": "^14",
+    "@angular/core": "^14"
   },
   "dependencies": {
     "tslib": "^2.3.0"
