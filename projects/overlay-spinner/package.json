@@ -1,6 +1,6 @@
 {
   "name": "@deejayy/overlay-spinner",
-  "version": "14.0.1",
+  "version": "14.0.2",
   "description": "Overlay Spinner Component for Angular",
   "private": false,
   "repository": {
@@ -14,8 +14,9 @@
   },
   "keywords": [
     "angular",
-    "runtime config",
-    "reactive config"
+    "spinner",
+    "loader",
+    "loading animation"
   ],
   "homepage": "https://github.com/deejayy/overlay-spinner",
   "peerDependencies": {
