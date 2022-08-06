@@ -1,0 +1,73 @@
+<div class="spinner">
+  <div class="overlay" [ngClass]="{ 'full-page': fullPage }" *ngIf="loading">
+    <div class="wrapper">
+      <div class="frame">
+        <div class="image">
+          <img src="{{ imagePath }}" [alt]="title" *ngIf="imagePath; else defaultSpinner" />
+        </div>
+        <div class="title">{{ title }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="constraint">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<ng-template #defaultSpinner>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+    <defs>
+      <style>
+        .cover {
+          fill: white;
+        }
+        .ring {
+          stroke: rgba(0, 0, 0, 0.1);
+          fill: none;
+          stroke-width: 50;
+        }
+        .c {
+          fill: none;
+          stroke-width: 80;
+          stroke-dasharray: 500 500;
+          filter: blur(100px);
+          transform-origin: center;
+        }
+        .c1 {
+          animation: r1 7s linear infinite forwards;
+          stroke: rgba(128, 255, 0, 1);
+          stroke-dashoffset: 500;
+        }
+        .c2 {
+          animation: r1 6s ease-in-out infinite backwards;
+          stroke: rgba(255, 0, 255, 1);
+          stroke-dashoffset: 250;
+        }
+        .c3 {
+          animation: r1 5s ease-in-out infinite forwards;
+          stroke: rgba(0, 128, 255, 1);
+          stroke-dashoffset: 750;
+        }
+        .c4 {
+          animation: r1 4s linear infinite backwards;
+          stroke: rgba(255, 128, 0, 1);
+          stroke-dashoffset: 0;
+        }
+        @keyframes r1 {
+          50% {
+            stroke-width: 120;
+            transform: rotateZ(360deg);
+          }
+        }
+      </style>
+    </defs>
+    <g>
+      <circle class="c c1" cx="500" cy="500" r="275" />
+      <circle class="c c2" cx="500" cy="500" r="275" />
+      <circle class="c c3" cx="500" cy="500" r="275" />
+      <circle class="c c4" cx="500" cy="500" r="275" />
+      <circle class="cover" cx="500" cy="500" r="350" />
+      <circle class="ring" cx="500" cy="500" r="325" />
+    </g>
+  </svg>
+</ng-template>
